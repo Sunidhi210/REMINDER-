@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>REMINDER APP</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div class="container">
+      <div class="background">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+
+
+      </div>
+
+      
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <div id="reminderList"></div>
+  </div>
+</div>
+    <h1>Reminder App</h1>
+    <form id="reminderForm">
+      
+        <label for="title"> TITLE </label>
+        <input type="text" id="title" name="title" placeholder="Title For The Reminder" required> <br>
+
+
+        <label for="date"> DATE </label>
+        <input type="date" id="date" name="date"  required><br>
+
+
+      <button type="submit">Add Reminder</button>
+    </form>
+    <!-- <div id="reminderList"></div> -->
+
+    <div class="rc" id="remindercontainer">
+      <div class="month"  id="Jan">
+        <h3  id="monthly-button"  class="monthly-button" data-month="JANUARY" onclick="openNav()"> JANUARY </h3>
+        
+      
+      </div>
+
+      <div class="month" id="Feb">
+        <h3  id="monthly-button" class="monthly-button" data-month="FEBRUARY" onclick="openNav()" > FEBRUARY </h3>
+
+      </div>
+
+      <div class="month" id="Mar">
+         <h3  id="monthly-button"  class="monthly-button" data-month="MARCH" onclick="openNav()"> MARCH </h3>
+
+      </div>
+
+      <div class="month" id="Apr">
+         <h3  id="monthly-button"  class="monthly-button" data-month="APRIL" onclick="openNav()"> APRIL </h3>
+
+      </div>
+
+      <div class="month" id="May">
+         <h3  id="monthly-button" class="monthly-button" data-month="MAY" onclick="openNav()"> MAY </h3>
+
+      </div>
+
+      <div class="month" id="June">
+        <h3  id="monthly-button"  class="monthly-button" data-month="JUNE" onclick="openNav()"> JUNE </h3>
+
+      </div>
+
+      <div class="month" id="July">
+        <h3  id="monthly-button" class="monthly-button" data-month="JULY"  onclick="openNav()"> JULY </h3>
+
+      </div>
+
+      <div class="month" id="Aug">
+         <h3  id="monthly-button"  class="monthly-button" data-month="AUGUST" onclick="openNav()"> AUGUST </h3>
+
+      </div>
+
+      <div class="month" id="Sept">
+       <h3  id="monthly-button" class="monthly-button" data-month="SEPTEMBER" onclick="openNav()"> SEPTEMBER </h3>
+
+      </div>
+
+      <div class="month" id="Oct">
+        <h3  id="monthly-button" class="monthly-button" data-month="OCTOBER"  onclick="openNav()" > OCTOBER </h3>
+      </div>
+
+      <div class="month" id="Nov">
+       <h3  id="monthly-button" class="monthly-button" data-month="NOVEMBER" onclick="openNav()"> NOVEMBER </h3>
+
+      </div>
+
+      <div class="month" id="Dec" >
+         <h3 id="monthly-button" class="monthly-button" data-month="DECEMBER"  onclick="openNav()"> DECEMBER </h3>
+
+      </div>
+      
+      
+    </div>
+
+    <button class="my-button show-all-button" onclick="openNav()" id="reminderList">Show All Reminders</button>
+
+    <div class="reminder-container">
+      <div class="reminder-content">
+        <!-- Reminders will be dynamically populated here -->
+      </div>
+    </div>
+
+
+   
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

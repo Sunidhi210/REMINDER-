@@ -1,0 +1,277 @@
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #000;
+    overflow-y: scroll;
+    color: #ffffff;
+  }
+
+  h3{
+    cursor:pointer;
+  }
+  
+  .background {
+    position: fixed;
+    content: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  .background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff2670, #f15658, #fbab66, #f9f871);
+    opacity: 0.6;
+    animation: animateBackground 30s linear infinite;
+  }
+  
+  @keyframes animateBackground {
+    0% {
+      transform: translateX(-50%) translateY(-50%) rotate(0);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+  }
+  
+  .background::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: pulsate 4s ease-in-out infinite;
+  }
+  
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #bbfdfc;
+    border-radius: 5px;
+  }
+
+  .rc{
+    width: 100%;
+  padding: 9px 0px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #bbfdfc;
+  box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+
+  .month{
+    border: 1px solid rgb(200, 191, 191);
+    border-radius: 35px;
+    padding: 1px ;
+    margin: 14px;
+    background-color: rgba(240, 248, 255, 0.366);
+    backdrop-filter: blur(500px);
+    text-align: center;
+  }
+  
+  form input[type="text"],
+  form input[type="date"],
+  form button[type="submit"] {
+    display: block;
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  #monthly-button {
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.3s;
+  }
+  
+  #monthly-button:hover {
+    transform: scale(1.2);
+  }
+ 
+/* #remindercontainer{
+  border: 1px solid #ccc;
+  
+} */
+
+.month {
+    
+    /* padding: 10px;
+    padding-top: 5%; */
+
+    width: calc(100% / 5);
+    float: left;
+    box-sizing: border-box;
+    padding: 1px;
+    
+  }
+  .month {
+    margin-bottom: 20px;
+  }
+
+  .month-heading {
+    margin: 0;
+    cursor: pointer;
+  }
+  .reminder-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+/* Styling for the curtain menu container */
+.reminder-container {
+   /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+   height: 100%;
+   width: 0;
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   background-color: rgb(0,0,0); /* Black fallback color */
+   background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+   overflow-x: hidden; /* Disable horizontal scroll */
+   transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Show the curtain menu when active */
+.reminder-container.active {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block; /* Display block instead of inline */
+  transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* Styling for the reminder content in the curtain menu */
+.reminder-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.reminder .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+/* #Jan, #Apr, #July, #Oct {
+  padding-left: 4%;
+  /* margin-top: 2%; */
+
+/* #Feb, #May, #Aug, #Nov{
+  padding-left: 42%;
+  /* margin-top: 2%; */
+
+
+/* #Mar, #June, #Sept, #Dec{
+   padding-left: 82%;
+   /* margin-top: 2%; */
+
+ 
+/* 
+button{
+    float-top: 2%;
+} */
